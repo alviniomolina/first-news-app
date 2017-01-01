@@ -16,6 +16,11 @@ def index():
     object_list = get_csv()
     return render_template(template, object_list=object_list)
 
+@app.route ('/<row_id>/')
+def detail(row_id):
+    template = 'detail.html'
+    return render_template(template)
+
 if __name__ == '__main__':
     #Fire up the Flask test erver
     app.run(debug=True, use_reloader=True)
